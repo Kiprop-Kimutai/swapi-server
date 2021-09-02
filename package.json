@@ -1,0 +1,27 @@
+{
+  "name": "swaserver",
+  "version": "1.0.0",
+  "description": "star wars server",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "KIM.J",
+  "license": "ISC",
+  "dependencies": {
+    "apollo": "^2.33.6",
+    "apollo-datasource-rest": "^3.2.0",
+    "apollo-link": "^1.2.14",
+    "apollo-link-http": "^1.5.17",
+    "apollo-server": "^3.3.0",
+    "graphql": "^15.5.2"
+  },
+  "devDependencies": {
+    "apollo-server-testing": "^2.25.2",
+    "jest": "^27.1.0",
+    "msw": "^0.35.0"
+  }
+}

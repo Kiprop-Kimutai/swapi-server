@@ -7,9 +7,7 @@ class SWAPI extends RESTDataSource {
     }
 
     async getAllPeople({pageNumber}) {
-        console.log("********", pageNumber);
         const response = await this.get(`people/?page=${pageNumber}`);
-        console.log(response);
         const {count, results, previous, next} = response;
         const pageSize = 10;
         const people =  Array.isArray(results) ? results.map(person => this.reducePerson(person)) : [];

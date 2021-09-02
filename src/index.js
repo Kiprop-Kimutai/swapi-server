@@ -1,5 +1,5 @@
 const { ApolloServer } = require('apollo-server');
-
+require('dotenv').config();
 const typeDefs = require('./schema');
 const SWAPI = require('./datasources/swapi');
 const resolvers = require('./resolvers');
@@ -11,7 +11,7 @@ const server = new ApolloServer({
     })
 });
 
-server.listen({port: 3500}).then(() => {
+server.listen({port: process.env.PORT || 3500}).then(() => {
     console.log(`
     Server is running!
     Listening on port 3500

@@ -14,7 +14,6 @@ const server = new ApolloServer({
 server.listen({port: process.env.PORT || 3500}).then(() => {
 	console.log(`
     Server is running!
-    Listening on port 3500
-    Explore at https://studio.apollographql.com/sandbox
-  `);
+    Listening on port ${process.env.PORT}`
+	);
 });

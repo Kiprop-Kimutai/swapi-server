@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "jest"
+    "test": "jest",
+    "lint" : "npx eslint src/",
+    "lint --fix" : "npx eslint src/ --fix"
   },
   "keywords": [
     "npm"
@@ -23,6 +25,7 @@
   },
   "devDependencies": {
     "apollo-server-testing": "^2.25.2",
+    "eslint": "^7.32.0",
     "jest": "^27.1.0",
     "msw": "^0.35.0"
   }

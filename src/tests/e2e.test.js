@@ -5,37 +5,37 @@ const resolvers = require('../resolvers');
 describe('E2E tests', () => {
     it('Resolves People query', async () => {
         const mockPeople =  {
-                    People: [
-                        {
-                            name: "Luke Skywalker",
-                            height: "172",
-                            gender: "male",
-                            homeworld: "https://swapi.dev/api/planets/1/"
-                          }
-                    ],
-                    Pagination: {
-                        nextPage: 2,
-                        hasMore: true,
-                        previousPage: null
+            People: [
+                {
+                    name: "Luke Skywalker",
+                    height: "172",
+                    gender: "male",
+                    homeworld: "https://swapi.dev/api/planets/1/"
                     }
-          };
-          const PeopleQuery = gql`
-          query People($peoplePageNumber: Int) {
-            People(pageNumber: $peoplePageNumber) {
-              People {
+            ],
+            Pagination: {
+                nextPage: 2,
+                hasMore: true,
+                previousPage: null
+            }
+        };
+        const PeopleQuery = gql`
+        query People($peoplePageNumber: Int) {
+        People(pageNumber: $peoplePageNumber) {
+            People {
                 name
                 height
                 gender
                 homeworld
-              },
-              Pagination {
+            },
+            Pagination {
                 nextPage
                 hasMore
                 previousPage
-              }    
-            }
-          }
-          `;
+            }    
+        }
+        }
+        `;
         const swAPI = new SWAPI();
         const server = new ApolloServer({
             typeDefs,

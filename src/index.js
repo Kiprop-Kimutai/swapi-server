@@ -4,17 +4,17 @@ const typeDefs = require('./schema');
 const SWAPI = require('./datasources/swapi');
 const resolvers = require('./resolvers');
 const server = new ApolloServer({
-    typeDefs,
-    resolvers,
-    dataSources: () => ({
-        swAPI: new SWAPI()
-    })
+	typeDefs,
+	resolvers,
+	dataSources: () => ({
+		swAPI: new SWAPI()
+	})
 });
 
 server.listen({port: process.env.PORT || 3500}).then(() => {
-    console.log(`
+	console.log(`
     Server is running!
     Listening on port 3500
     Explore at https://studio.apollographql.com/sandbox
   `);
-})
+});
